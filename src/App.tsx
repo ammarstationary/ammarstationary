@@ -8,7 +8,7 @@ import { AdminRoute } from "./components/admin/AdminRoute";
 import Index from "./pages/Index";
 import Collection from "./pages/Collection";
 import CardDetail from "./pages/CardDetail";
-import About from "./pages/About";
+import AdminContactSettings from "./pages/admin/AdminContactSettings";
 import Contact from "./pages/Contact";
 import Auth from "./pages/Auth";
 import AdminDashboard from "./pages/admin/AdminDashboard";
@@ -34,7 +34,7 @@ const App = () => (
             <Route path="/collection" element={<Collection />} />
             <Route path="/card/:id" element={<CardDetail />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/about" element={<About />} />
+            
             <Route path="/contact" element={<Contact />} />
             <Route path="/auth" element={<Auth />} />
             <Route path="/admin" element={<AdminRoute><AdminDashboard /></AdminRoute>} />
@@ -43,6 +43,7 @@ const App = () => (
             <Route path="/admin/bookings" element={<AdminRoute><AdminBookings /></AdminRoute>} />
             <Route path="/admin/promo-codes" element={<AdminRoute><AdminPromoCodes /></AdminRoute>} />
             <Route path="/admin/services" element={<AdminRoute><AdminServices /></AdminRoute>} />
+            <Route path="/admin/contact" element={<AdminRoute><AdminContactSettings /></AdminRoute>} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
