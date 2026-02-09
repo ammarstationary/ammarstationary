@@ -130,6 +130,9 @@ export function CardForm({ isOpen, onClose, onSubmit, initialData, isLoading }: 
     e.preventDefault();
     onSubmit({
       ...formData,
+      set_name: formData.set_name || 'General',
+      rarity: formData.rarity || 'Common',
+      condition: formData.condition || 'Mint',
       image: images[0] || '',
       images: images,
     });
@@ -178,47 +181,6 @@ export function CardForm({ isOpen, onClose, onSubmit, initialData, isLoading }: 
                   />
                 </div>
 
-                <div>
-                  <label className="block text-sm text-muted-foreground mb-2">Set *</label>
-                  <input
-                    type="text"
-                    value={formData.set_name}
-                    onChange={(e) => setFormData({ ...formData, set_name: e.target.value })}
-                    className="w-full px-4 py-3 bg-background/50 border border-border/50 rounded-lg 
-                             text-foreground focus:outline-none focus:border-primary/50"
-                    required
-                  />
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm text-muted-foreground mb-2">Rarity *</label>
-                    <select
-                      value={formData.rarity}
-                      onChange={(e) => setFormData({ ...formData, rarity: e.target.value as Card['rarity'] })}
-                      className="w-full px-4 py-3 bg-background/50 border border-border/50 rounded-lg 
-                               text-foreground focus:outline-none focus:border-primary/50"
-                    >
-                      {rarities.map((r) => (
-                        <option key={r} value={r}>{r}</option>
-                      ))}
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm text-muted-foreground mb-2">Condition *</label>
-                    <select
-                      value={formData.condition}
-                      onChange={(e) => setFormData({ ...formData, condition: e.target.value as Card['condition'] })}
-                      className="w-full px-4 py-3 bg-background/50 border border-border/50 rounded-lg 
-                               text-foreground focus:outline-none focus:border-primary/50"
-                    >
-                      {conditions.map((c) => (
-                        <option key={c} value={c}>{c}</option>
-                      ))}
-                    </select>
-                  </div>
-                </div>
 
                 <div className="grid grid-cols-2 gap-4">
                   <div>

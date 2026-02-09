@@ -5,7 +5,7 @@ import { GlassCard } from "@/components/ui/GlassCard";
 import { GlassButton } from "@/components/ui/GlassButton";
 import { useCards } from "@/hooks/useCards";
 import { useCategories } from "@/hooks/useCategories";
-import { Sparkles, Shield, Crown, Gem } from "lucide-react";
+import { Sparkles, Crown, Gem } from "lucide-react";
 
 const categoryIcons: Record<string, typeof Sparkles> = {
   "Pokémon": Sparkles,
@@ -14,7 +14,7 @@ const categoryIcons: Record<string, typeof Sparkles> = {
   "Yu-Gi-Oh": Crown,
   "Magic: The Gathering": Gem,
   "Magic": Gem,
-  "One Piece": Shield,
+  "One Piece": Sparkles,
 };
 
 export default function Index() {
@@ -71,30 +71,28 @@ export default function Index() {
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-6"
               >
                 <Sparkles className="w-4 h-4 text-primary" />
-                <span className="text-sm text-primary font-medium">Premium TCG Collection</span>
+                <span className="text-sm text-primary font-medium">Premium Variety Collection</span>
               </motion.div>
 
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6">
-                <span className="text-foreground">India's Elite</span>
+                <span className="text-foreground">All Types of</span>
                 <br />
-                <span className="text-gradient">TCG Booking House</span>
+                <span className="text-gradient">Stationary Available</span>
               </h1>
 
               <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0">
-                <span className="text-secondary font-semibold">Authentic</span> • 
-                <span className="text-primary font-semibold"> Premium</span> • 
-                <span className="text-accent font-semibold"> Collector-Only</span>
+                Browse our wide range of books, stationery and more
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link to="/collection">
                   <GlassButton variant="primary" size="lg" glowColor="cyan">
-                    Explore Collection
+                    Explore Products
                   </GlassButton>
                 </Link>
-                <Link to="/about">
+                <Link to="/contact">
                   <GlassButton variant="ghost" size="lg">
-                    Learn More
+                    Contact Us
                   </GlassButton>
                 </Link>
               </div>
@@ -313,7 +311,7 @@ export default function Index() {
             >
               <Link to="/collection">
                 <GlassButton variant="secondary" size="lg" glowColor="gold">
-                  View Full Collection
+                  View All Products
                 </GlassButton>
               </Link>
             </motion.div>
@@ -321,41 +319,6 @@ export default function Index() {
         </section>
       )}
 
-      {/* Trust Section */}
-      <section className="py-20 md:py-32">
-        <div className="container mx-auto px-4">
-          <GlassCard className="p-8 md:p-12 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <Shield className="w-16 h-16 mx-auto mb-6 text-primary" />
-              <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-4">
-                Authenticity Guaranteed
-              </h2>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
-                Every card in our collection is verified for authenticity. We work only with 
-                trusted sources and provide detailed condition reports for all pieces.
-              </p>
-              <div className="flex flex-wrap justify-center gap-6 text-sm">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-primary" />
-                  <span className="text-muted-foreground">Verified Authentic</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-secondary" />
-                  <span className="text-muted-foreground">Condition Graded</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-accent" />
-                  <span className="text-muted-foreground">Secure Booking</span>
-                </div>
-              </div>
-            </motion.div>
-          </GlassCard>
-        </div>
-      </section>
     </Layout>
   );
 }

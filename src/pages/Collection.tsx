@@ -43,11 +43,11 @@ export default function Collection() {
             className="text-center mb-12"
           >
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-              <span className="text-foreground">Card</span>{" "}
-              <span className="text-gradient">Collection</span>
+              <span className="text-foreground">Our</span>{" "}
+              <span className="text-gradient">Products</span>
             </h1>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Browse our curated selection of premium trading cards
+              Browse our curated selection of premium products
             </p>
           </motion.div>
 
@@ -103,7 +103,7 @@ export default function Collection() {
             className="text-center mb-8"
           >
             <p className="text-muted-foreground">
-              Showing <span className="text-primary font-semibold">{filteredCards.length}</span> cards
+              Showing <span className="text-primary font-semibold">{filteredCards.length}</span> products
             </p>
           </motion.div>
 
@@ -120,7 +120,7 @@ export default function Collection() {
               animate={{ opacity: 1 }}
               className="text-center py-20"
             >
-              <p className="text-muted-foreground text-lg">No cards found matching your criteria</p>
+              <p className="text-muted-foreground text-lg">No products found matching your criteria</p>
             </motion.div>
           )}
         </div>

@@ -8,9 +8,8 @@ import logo from "@/assets/logo.jpg";
 
 const navLinks = [
   { name: "Home", path: "/" },
-  { name: "Collection", path: "/collection" },
+  { name: "Products", path: "/collection" },
   { name: "Services", path: "/services" },
-  { name: "About", path: "/about" },
   { name: "Contact", path: "/contact" },
 ];
 
@@ -57,7 +56,7 @@ export function Header() {
             <div className="hidden md:block">
               <Link to="/collection">
                 <GlassButton variant="primary" size="sm">
-                  Browse Books
+                  Browse Products
                 </GlassButton>
               </Link>
             </div>
@@ -100,7 +99,7 @@ export function Header() {
               ))}
               <Link to="/collection" onClick={() => setIsOpen(false)} className="mt-2">
                 <GlassButton variant="primary" size="md" className="w-full">
-                  Browse Books
+                  Browse Products
                 </GlassButton>
               </Link>
             </nav>

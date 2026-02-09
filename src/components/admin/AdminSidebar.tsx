@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, CreditCard, FolderOpen, LogOut, X, Home, ClipboardList, Tag, Wrench } from 'lucide-react';
+import { LayoutDashboard, CreditCard, FolderOpen, LogOut, X, Home, ClipboardList, Tag, Wrench, Phone } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -10,11 +10,12 @@ interface AdminSidebarProps {
 
 const navItems = [
   { path: '/admin', icon: LayoutDashboard, label: 'Dashboard' },
-  { path: '/admin/cards', icon: CreditCard, label: 'Books' },
+  { path: '/admin/cards', icon: CreditCard, label: 'Products' },
   { path: '/admin/categories', icon: FolderOpen, label: 'Categories' },
   { path: '/admin/services', icon: Wrench, label: 'Services' },
   { path: '/admin/bookings', icon: ClipboardList, label: 'Bookings' },
   { path: '/admin/promo-codes', icon: Tag, label: 'Promo Codes' },
+  { path: '/admin/contact', icon: Phone, label: 'Contact Settings' },
 ];
 
 export function AdminSidebar({ isOpen, onClose }: AdminSidebarProps) {
