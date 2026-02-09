@@ -1,6 +1,7 @@
 import { useState, ReactNode } from 'react';
 import { Menu } from 'lucide-react';
 import { AdminSidebar } from './AdminSidebar';
+import { AdminBottomNav } from './AdminBottomNav';
 
 interface AdminLayoutProps {
   children: ReactNode;
@@ -33,11 +34,14 @@ export function AdminLayout({ children, title }: AdminLayoutProps) {
           <h1 className="text-2xl font-display font-bold text-foreground">{title}</h1>
         </header>
 
-        {/* Content */}
-        <div className="p-3 sm:p-4 lg:p-6">
+        {/* Content - add bottom padding on mobile for bottom nav */}
+        <div className="p-3 sm:p-4 lg:p-6 pb-24 lg:pb-6">
           {children}
         </div>
       </main>
+
+      {/* Mobile bottom navigation */}
+      <AdminBottomNav />
     </div>
   );
 }
